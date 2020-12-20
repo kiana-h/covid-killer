@@ -1,17 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+console.log("Webpack is working!");
+import GameView from "./game_view";
+import Corona from "./corona";
+import Game from "./game";
+window.addEventListener("DOMContentLoaded", (event) => {
+  const canvasEl = document.getElementsByTagName("canvas")[0];
+  canvasEl.height = Game.DIM_Y;
+  canvasEl.width = Game.DIM_X;
+  const ctx = canvasEl.getContext("2d");
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  const gameView = new GameView(ctx);
+});
