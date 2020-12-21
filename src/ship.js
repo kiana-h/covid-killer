@@ -40,6 +40,6 @@ class Ship extends MovingObject {
   }
 }
 const img = new Image();
-img.src = "../assets/ship.png";
+img.src = "./assets/ship.png";
 Ship.image = img;
 export default Ship;

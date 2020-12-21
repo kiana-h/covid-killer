@@ -138,9 +138,8 @@ footer {
 }
 
 .dialog {
-  position: absolute;
-  top: 250px;
-  left: 550px;
+  position: relative;
+  top: -800px;
   margin: 0 auto;
   font-size: 16px;
   z-index: 10;

@@ -27,9 +27,7 @@ class Cell extends MovingObject {
   }
 }
 const img = new Image();
-const iconLength = 5;
-const number = Math.floor(Math.random() * iconLength);
-img.src = `../assets/cell3.png`;
+img.src = `./assets/cell3.png`;
 Cell.image = img;
 
 export default Cell;

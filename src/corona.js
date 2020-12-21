@@ -74,7 +74,7 @@ class Corona extends MovingObject {
 }
 
 const img = new Image();
-img.src = "../assets/virus.png";
+img.src = "./assets/virus.png";
 Corona.image = img;
 
 export default Corona;
