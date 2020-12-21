@@ -14,7 +14,10 @@ class Ship extends MovingObject {
     options.speed = DEFAULTS.SPEED;
     options.color = options.color || DEFAULTS.COLOR;
     options.radius = DEFAULTS.RADIUS;
-    options.pos = options.pos || [600, 400];
+    options.pos = options.pos || [
+      window.innerWidth / 2,
+      (window.innerHeight - 200) / 2,
+    ];
     options.direction = options.direction || [0, 0];
     super(options);
     this.face = [1, 0];

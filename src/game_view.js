@@ -35,8 +35,10 @@ class GameView {
   }
 
   startGame(mode) {
-    const coronaCount = parseInt($("#corona").val()) || 3;
-    const cellCount = parseInt($("#cell").val()) || 10;
+    let coronaCount = parseInt($("#corona").val());
+    coronaCount = isNaN(coronaCount) ? 3 : coronaCount;
+    let cellCount = parseInt($("#cell").val());
+    cellCount = isNaN(cellCount) ? 10 : cellCount;
     const lives = 3;
     let speed = 1;
     let selected;
@@ -199,7 +201,6 @@ class GameView {
   }
 
   difficultyButtons(location, selected = "normal") {
-    debugger;
     const $container = $("<div></div>").addClass("difficultyButtons");
     const $text = $("<p>DIFFICULTY:</p>");
     const $easy = $("<button></button>")

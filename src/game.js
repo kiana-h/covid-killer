@@ -52,18 +52,18 @@ class Game {
   }
 
   static randomPos() {
-    const x = Math.floor(Math.random() * (Game.DIM_X - 30)) + 15;
-    const y = Math.floor(Math.random() * (Game.DIM_Y - 30)) + 15;
+    const x = Math.floor(Math.random() * (window.innerWidth - 30)) + 15;
+    const y = Math.floor(Math.random() * (window.innerHeight - 230)) + 115;
     return [x, y];
   }
 
   draw(ctx) {
-    ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight - 200);
     ctx.fillStyle = Game.BG_COLOR;
-    ctx.fillRect(0, 0, Game.DIM_X, Game.DIM_Y);
+    ctx.fillRect(0, 0, window.innerWidth, window.innerHeight - 200);
 
     var grd = ctx.createRadialGradient(600, 400, 10, 600, 400, 600);
-    var grd = ctx.createLinearGradient(0, 0, 0, 800);
+    var grd = ctx.createLinearGradient(0, 0, 0, window.innerHeight);
     grd.addColorStop(0, "#184065");
     // grd.addColorStop(0, "#46bfcf");
     grd.addColorStop(1, "#000000");
@@ -71,7 +71,7 @@ class Game {
     ctx.fillStyle = grd;
     ctx.fill();
 
-    ctx.fillRect(0, 0, Game.DIM_X, Game.DIM_Y);
+    ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
     this.allObjects().forEach((el) => el.draw(ctx));
   }
 
@@ -116,13 +116,16 @@ class Game {
     return (
       pos[0] < 0 + radius ||
       pos[1] < 0 + radius ||
-      pos[0] > Game.DIM_X - radius ||
-      pos[1] > Game.DIM_Y - radius
+      pos[0] > window.innerWidth - radius ||
+      pos[1] > window.innerHeight - 200 - radius
     );
   }
 
   wrap(pos) {
-    return [Util.wrap(pos[0], Game.DIM_X), Util.wrap(pos[1], Game.DIM_Y)];
+    return [
+      Util.wrap(pos[0], window.innerWidth),
+      Util.wrap(pos[1], window.innerHeight - 200),
+    ];
   }
 
   allObjects() {
