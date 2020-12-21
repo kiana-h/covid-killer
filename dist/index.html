@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Covid Killer</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rajdhani&display=swap");
+    </style>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Sarpanch:wght@500&display=swap");
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="stats" class="hidden">
+      <div class="livesContainer">
+        <p>LIVES:</p>
+        <p id="lives"></p>
+      </div>
+      <div class="cellCoronaContainer">
+        <div class="cellsContainer">
+          <p>HEALTHY CELLS:</p>
+          <p id="cells"></p>
+        </div>
+        <div class="coronasContainer">
+          <p>CORONA VIRUSES:</p>
+          <p id="coronas"></p>
+        </div>
+      </div>
+    </div>
+
+    <canvas id="game-canvas"> </canvas>
+    <div id="difficultyContainer" class="hidden">
+      <div class="iconContainer">
+        <button class="iconButton restart">
+          <i class="fa fa-refresh" aria-hidden="true"></i>
+        </button>
+        <button class="iconButton info">
+          <i class="fa fa-info" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div id="difficulty"></div>
+    </div>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="../vendor/keymaster.js"></script>
+  <script type="application/javascript" src="./main.js"></script>
+</html>

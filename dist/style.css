@@ -1,0 +1,208 @@
+* {
+  text-align: center;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
+  font-family: "Sarpanch", sans-serif;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 12px;
+  color: white;
+  padding: 10px;
+  font-family: "Sarpanch", sans-serif;
+}
+button:focus {
+  outline: 0;
+}
+button:active {
+  color: pink;
+  border-color: pink;
+}
+
+i {
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  color: white;
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+footer {
+  width: 1200px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+#game-canvas {
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid;
+}
+
+#stats,
+#difficultyContainer {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  align-items: center;
+  width: 1200px;
+}
+
+#difficulty {
+  display: flex;
+  align-items: center;
+}
+
+.difficultyButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.diffButt-game,
+.diffButt-dialog {
+  margin-left: 20px;
+}
+.difficultyButton:hover {
+  cursor: pointer;
+}
+.selected {
+  font-weight: bold;
+  border-width: 3px;
+}
+.iconContainer {
+  display: flex;
+  align-items: center;
+}
+.iconButton {
+  margin-right: 30px;
+  color: white;
+  font-size: 18px;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cellCoronaContainer,
+.cellsContainer,
+.coronasContainer,
+.livesContainer {
+  display: flex;
+}
+
+.livesContainer {
+  display: flex;
+  align-items: center;
+}
+.coronasContainer {
+  margin-left: 50px;
+}
+
+#cells,
+#coronas,
+#lives {
+  margin-left: 10px;
+}
+.hidden {
+  visibility: hidden;
+}
+
+.dialog {
+  position: absolute;
+  top: 250px;
+  left: 550px;
+  margin: 0 auto;
+  font-size: 16px;
+  z-index: 10;
+  color: white;
+  background-color: rgba(0, 0, 0);
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 500px;
+  padding: 50px;
+}
+
+.dialogTitle {
+  padding: 0;
+  margin: 0;
+}
+.dialogButton {
+  font-size: 20px;
+  margin-top: 20px;
+  color: pink;
+  border-color: pink;
+}
+
+.dialogMission {
+  font-size: 20 px;
+}
+
+.inputs {
+  display: flex;
+}
+
+.inputContainer {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.inputContainer input {
+  height: 20px;
+  width: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  box-shadow: none;
+}
+
+.dialogInstructions {
+  font-size: 16px;
+}
+.dialogInstructionsColor {
+  color: pink;
+}
+
+.countdown {
+  position: absolute;
+  top: 400px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  color: pink;
+}
