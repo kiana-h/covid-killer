@@ -39,10 +39,11 @@ class GameView {
     const cellCount = parseInt($("#cell").val()) || 10;
     const lives = 3;
     let speed = 1;
+    let selected;
     if (mode !== "preview") {
-      const difficulty = $(".dialog").find(".selected").attr("id");
-      if (difficulty === "easy") speed = 0.25;
-      else if (difficulty === "hard") speed = 3;
+      selected = $(".dialog").find(".selected").attr("id");
+      if (selected === "easy") speed = 0.25;
+      else if (selected === "hard") speed = 3;
       this.countdown(3);
     } else {
       speed = 0.001;
@@ -59,7 +60,7 @@ class GameView {
       $("#difficulty").children().remove();
     }
 
-    const $buttons = this.difficultyButtons("game", difficulty);
+    const $buttons = this.difficultyButtons("game", selected);
     $("#difficulty").append($buttons);
 
     $(document).on("click", ".diffButt-game", (e) => {
@@ -152,7 +153,7 @@ class GameView {
   }
 
   createDialog(titleText, instruction, buttonText, { intro }) {
-    if ($(".dialog")) return;
+    if ($(".dialog").length) return;
     const $dialog = $("<div></div>").addClass("dialog");
     const $title = $("<h1></h1>").addClass("dialogTitle").text(titleText);
     $dialog.append($title);
@@ -198,6 +199,7 @@ class GameView {
   }
 
   difficultyButtons(location, selected = "normal") {
+    debugger;
     const $container = $("<div></div>").addClass("difficultyButtons");
     const $text = $("<p>DIFFICULTY:</p>");
     const $easy = $("<button></button>")
