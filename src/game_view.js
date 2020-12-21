@@ -152,6 +152,7 @@ class GameView {
   }
 
   createDialog(titleText, instruction, buttonText, { intro }) {
+    if ($(".dialog")) return;
     const $dialog = $("<div></div>").addClass("dialog");
     const $title = $("<h1></h1>").addClass("dialogTitle").text(titleText);
     $dialog.append($title);
