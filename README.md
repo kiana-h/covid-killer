@@ -1,6 +1,6 @@
 # Covid Killer
 
-Live Website: [https://tweetstreamer.com](https://kiana-h.github.io/covid-killer/)
+Live Website: [https://kiana-h.github.io/covid-killer/](https://kiana-h.github.io/covid-killer/)
 
 I initially created Covid Killer as a canvas animation which simulated the spread of Covid-19 based on certain variables (number of infected/healthy cells and their movement). That animation evolved into a game! 
 The player controls a white blood cell which tries to destroy all the floating corona virus cells before they infect the healthy cells.
