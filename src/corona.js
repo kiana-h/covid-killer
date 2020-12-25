@@ -41,31 +41,45 @@ class Corona extends MovingObject {
     }
   }
   bounce(obj1, obj2) {
-    let [d1, d2] = [obj1.direction, obj2.direction];
-    let [p1, p2] = [obj1.pos, obj2.pos];
+    const [p1, p2] = [obj1.pos, obj2.pos];
+    const [d1, d2] = [obj1.direction, obj2.direction];
+    const [s1, s2] = [obj1.speed, obj2.speed];
 
-    let vCollision = { x: p2[0] - p1[0], y: p2[1] - p1[1] };
+    //calculate velocity based on direction and speed
+    // const [v1, v2] = [
+    //   [d1[0] * s1, d1[1] * s1],
+    //   [d2[0] * s2, d1[2] * s2],
+    // ];
 
-    let distance = Math.sqrt(
+    //get vector of collision (arrow between the center of two objects)
+    const vCollision = { x: p2[0] - p1[0], y: p2[1] - p1[1] };
+
+    //calculate distance between two objects
+    const distance = Math.sqrt(
       Math.pow(obj2.pos[0] - obj1.pos[0], 2) +
         Math.pow(obj2.pos[1] - obj1.pos[1], 2)
     );
 
-    let vCollisionNorm = {
+    //scale the vector of collision to get the collision normal / direction
+    const vCollisionNorm = {
       x: vCollision.x / distance,
       y: vCollision.y / distance,
     };
 
-    let vRelativeVelocity = { x: d1[0] - d2[0], y: d1[1] - d2[1] };
+    //calculate relative velocity
+    const vRelativeVelocity = { x: d1[0] - d2[0], y: d1[1] - d2[1] };
 
-    let speed =
+    //calculate speed based on relative velocity and normal vector
+    const speed =
       vRelativeVelocity.x * vCollisionNorm.x +
       vRelativeVelocity.y * vCollisionNorm.y;
 
+    //if objects are moving away from eachother no further change is needed
     if (speed < 0) {
       return;
     }
 
+    //move objects in opposite directions
     obj1.direction[0] -= speed * vCollisionNorm.x;
     obj1.direction[1] -= speed * vCollisionNorm.y;
     obj2.direction[0] += speed * vCollisionNorm.x;
